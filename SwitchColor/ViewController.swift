@@ -19,10 +19,16 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
     }
-
+    
+    
+    // isEnabled --> means that we can open and close the switch , usually we dont need to use it as condtional statment we just assign to it a bool value
+    
+    // What we need is for example  red.isOn -> is the switch on or off
+    
+    
     @IBAction func switchStatus(_ sender: Any) {
        
-        if main.isEnabled == true {
+        if main.isOn == true {
 
             red.setOn(false, animated: false)
             green.setOn(false, animated: false)
@@ -31,27 +37,32 @@ class ViewController: UIViewController {
             blue.isEnabled = true
             red.isEnabled = true
             green.isEnabled = true
+            
         }else{
+            
+            
+            labelStatus.backgroundColor = .black
+            
             red.setOn(false, animated: false)
             green.setOn(false, animated: false)
             blue.setOn(false, animated: false)
+            
             blue.isEnabled = false
             red.isEnabled = false
             green.isEnabled = false
-            blue.isOn = false
-            red.isOn = false
-            green.isOn = false
+       
         }
         
     }
     @IBAction func switchRed(_ sender: Any) {
         
-      
-        if  red.isEnabled == true {
+  
+        if  red.isOn == true {
             labelStatus.backgroundColor = .red
-            red.setOn(true, animated: true)
             green.setOn(false, animated: false)
             blue.setOn(false, animated: false)
+        }else{
+            labelStatus.backgroundColor = .black
         }
     
         
@@ -60,22 +71,24 @@ class ViewController: UIViewController {
     }
     @IBAction func switchBlue(_ sender: Any) {
        
-        if  blue.isEnabled == true {
+        if  blue.isOn == true {
             labelStatus.backgroundColor = .blue
             red.setOn(false, animated: false)
             green.setOn(false, animated: false)
-            blue.setOn(true, animated: true)
+        }else{
+            labelStatus.backgroundColor = .black
         }
                
     }
     @IBAction func switchGreen(_ sender: Any) {
         
         
-        if green.isEnabled == true {
+        if green.isOn == true {
             labelStatus.backgroundColor = .green
             red.setOn(false, animated: false)
-            green.setOn(true, animated: true)
             blue.setOn(false, animated: false)
+        }else{
+            labelStatus.backgroundColor = .black
         }
         
      
